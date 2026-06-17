@@ -79,6 +79,25 @@ nav ul a:hover {
  color: var(--gold);
 }
 
+.lang-toggle {
+ font-family: "Space Mono", monospace;
+ font-size: 0.65rem;
+ letter-spacing: 0.15em;
+ text-transform: uppercase;
+ color: var(--gold);
+ background: none;
+ border: 1px solid rgba(200, 169, 126, 0.35);
+ padding: 4px 10px;
+ cursor: pointer;
+ transition: background 0.2s, border-color 0.2s;
+ margin-left: 6px;
+}
+
+.lang-toggle:hover {
+ background: rgba(200, 169, 126, 0.1);
+ border-color: var(--gold);
+}
+
 /* ── HERO ── */
 #hero {
  min-height: 100vh;
@@ -369,27 +388,27 @@ section {
  cursor: pointer;
 }
 
-.gallery-item:nth-child(1) {
+.gallery-item.pos-1 {
  grid-column: span 5;
  aspect-ratio: 4/5;
 }
-.gallery-item:nth-child(2) {
+.gallery-item.pos-2 {
  grid-column: span 4;
  aspect-ratio: 4/5;
 }
-.gallery-item:nth-child(3) {
+.gallery-item.pos-3 {
  grid-column: span 3;
  aspect-ratio: 4/5;
 }
-.gallery-item:nth-child(4) {
+.gallery-item.pos-4 {
  grid-column: span 3;
  aspect-ratio: 1;
 }
-.gallery-item:nth-child(5) {
+.gallery-item.pos-5 {
  grid-column: span 5;
  aspect-ratio: 1;
 }
-.gallery-item:nth-child(6) {
+.gallery-item.pos-6 {
  grid-column: span 4;
  aspect-ratio: 1;
 }
@@ -734,8 +753,8 @@ footer {
  #tattoo .tattoo-grid {
   grid-template-columns: 1fr;
  }
- .gallery-item:nth-child(n) {
-  grid-column: span 12;
+ .gallery-item {
+  grid-column: span 12 !important;
  }
  nav ul {
   gap: 20px;
