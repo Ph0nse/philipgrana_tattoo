@@ -168,110 +168,37 @@
     >
      <h2 class="section-title" style="margin-bottom: 0">Selected works</h2>
      <div class="gallery-tabs">
-      <span class="tab active">All</span>
-      <span class="tab">Photography</span>
-      <span class="tab">Illustration</span>
-      <span class="tab">Prints</span>
+      <span class="tab active" data-filter="all">All</span>
+      <span class="tab" data-filter="photography">Photography</span>
+      <span class="tab" data-filter="illustration">Illustration</span>
+      <span class="tab" data-filter="tattoo">Tattoo</span>
      </div>
     </div>
    </div>
 
    <div class="gallery-grid">
-    <div class="gallery-item">
-     <div class="gallery-placeholder">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-       <rect
-        x="2"
-        y="6"
-        width="32"
-        height="24"
-        rx="2"
-        stroke="#C8A97E"
-        stroke-width="1.2"
-       />
-       <circle cx="18" cy="18" r="6" stroke="#C8A97E" stroke-width="1.2" />
-      </svg>
-      Photography
-     </div>
+    <div class="gallery-item" data-category="photography">
+     <img src="img/placeholder_photography.jpg" alt="Photography" class="gallery-img" />
      <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
     </div>
-    <div class="gallery-item">
-     <div class="gallery-placeholder">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-       <path
-        d="M6 30L14 16l8 10 6-7 8 11"
-        stroke="#C8A97E"
-        stroke-width="1.2"
-        stroke-linejoin="round"
-       />
-      </svg>
-      Illustration
-     </div>
+    <div class="gallery-item" data-category="illustration">
+     <img src="img/placeholder_Illustration.jpg" alt="Illustration" class="gallery-img" />
      <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
     </div>
-    <div class="gallery-item">
-     <div class="gallery-placeholder">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-       <rect
-        x="4"
-        y="4"
-        width="28"
-        height="28"
-        rx="1"
-        stroke="#C8A97E"
-        stroke-width="1.2"
-       />
-       <path d="M10 18h16M18 10v16" stroke="#C8A97E" stroke-width="1.2" />
-      </svg>
-      Mixed media
-     </div>
+    <div class="gallery-item" data-category="tattoo">
+     <img src="img/placeholder_tattoo.jpg" alt="Tattoo" class="gallery-img" />
      <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
     </div>
-    <div class="gallery-item">
-     <div class="gallery-placeholder">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-       <circle cx="18" cy="18" r="12" stroke="#C8A97E" stroke-width="1.2" />
-       <path
-        d="M18 10v8l5 3"
-        stroke="#C8A97E"
-        stroke-width="1.2"
-        stroke-linecap="round"
-       />
-      </svg>
-      Print
-     </div>
+    <div class="gallery-item" data-category="photography">
+     <img src="img/placeholder_photography.jpg" alt="Photography" class="gallery-img" />
      <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
     </div>
-    <div class="gallery-item">
-     <div class="gallery-placeholder">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-       <rect
-        x="2"
-        y="6"
-        width="32"
-        height="24"
-        rx="2"
-        stroke="#C8A97E"
-        stroke-width="1.2"
-       />
-       <circle cx="18" cy="18" r="6" stroke="#C8A97E" stroke-width="1.2" />
-      </svg>
-      Photography
-     </div>
+    <div class="gallery-item" data-category="illustration">
+     <img src="img/placeholder_Illustration.jpg" alt="Illustration" class="gallery-img" />
      <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
     </div>
-    <div class="gallery-item">
-     <div class="gallery-placeholder">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-       <path
-        d="M6 30L14 16l8 10 6-7 8 11"
-        stroke="#C8A97E"
-        stroke-width="1.2"
-        stroke-linejoin="round"
-       />
-      </svg>
-      Illustration
-     </div>
+    <div class="gallery-item" data-category="tattoo">
+     <img src="img/placeholder_tattoo.jpg" alt="Tattoo" class="gallery-img" />
      <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
     </div>
    </div>
@@ -385,7 +312,7 @@
    <div class="location-inner">
     <div>
      <p class="section-eyebrow">Find me</p>
-     <h2 class="section-title">Based in Abbotsford, Melbourne</h2>
+     <h2 class="section-title">Based in Melbourne</h2>
 
      <div class="info-block">
       <div class="info-label">Studio</div>
@@ -483,15 +410,53 @@
    <div>© 2026 Alphonse Chan. All rights reserved.</div>
   </footer>
 
+  <div class="lightbox" id="lightbox">
+   <button class="lightbox-close">Close</button>
+   <img src="" alt="" />
+  </div>
+
   <script>
-   // Gallery tab switching
-   document.querySelectorAll(".tab").forEach((tab) => {
+   // Gallery tab filtering
+   const tabs = document.querySelectorAll(".tab");
+   const items = document.querySelectorAll(".gallery-item");
+
+   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-     document
-      .querySelectorAll(".tab")
-      .forEach((t) => t.classList.remove("active"));
+     tabs.forEach((t) => t.classList.remove("active"));
      tab.classList.add("active");
+
+     const filter = tab.dataset.filter;
+     items.forEach((item) => {
+      if (filter === "all" || item.dataset.category === filter) {
+       item.style.display = "";
+      } else {
+       item.style.display = "none";
+      }
+     });
     });
+   });
+
+   // Lightbox
+   const lightbox = document.getElementById("lightbox");
+   const lightboxImg = lightbox.querySelector("img");
+
+   document.querySelectorAll(".gallery-item").forEach((item) => {
+    item.addEventListener("click", () => {
+     const img = item.querySelector(".gallery-img");
+     if (img) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add("active");
+     }
+    });
+   });
+
+   lightbox.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+   });
+
+   document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") lightbox.classList.remove("active");
    });
 
    // Subtle parallax on hero rings
