@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco Voss — Tattoo Artist & Visual Creator</title>
+  <link
+   href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Space+Mono:wght@400;700&display=swap"
+   rel="stylesheet"
+  />
+  <link rel="stylesheet" href="ink.css" />
+ </head>
+ <body>
+  <!-- ── NAV ── -->
+  <nav>
+   <a href="#hero" class="nav-logo">philipgrana_tattoo</a>
+   <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Work</a></li>
+    <li><a href="#tattoo">Tattoo</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#booking">Book</a></li>
+    <li style="margin-left: 24px; padding-left: 24px; border-left: 1px solid rgba(200,169,126,0.25); display: flex; align-items: center; gap: 10px;">
+     <span style="font-family:'Courier New',monospace; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--paper); opacity:0.7;">Follow me on:</span>
+     <a href="https://www.instagram.com/philipgrana_tattoo/" target="_blank" aria-label="Instagram" style="display:flex; align-items:center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+       <circle cx="12" cy="12" r="4"/>
+       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+     </a>
+    </li>
+   </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <div id="hero">
+   <div class="hero-bg"></div>
+   <div class="hero-ring"></div>
+   <div class="hero-ring"></div>
+   <div class="hero-ring"></div>
+
+   <p class="hero-eyebrow">Tattoo artist &amp; visual creator</p>
+   <h1 class="hero-title">
+    <span class="name-first">philipgrana </span>
+    <span class="name-last">tattoo</span>
+   </h1>
+   <p class="hero-sub">
+    Ink, photography, and handcrafted visual art — rooted in a deep respect for
+    the human body as a living canvas.
+   </p>
+   <div class="hero-cta">
+    <a href="#booking" class="btn-primary">Book a Session</a>
+    <a href="#gallery" class="btn-ghost">View Work</a>
+   </div>
+  </div>
+
+  <!-- Signature ink divider -->
+  <svg
+   class="ink-divider"
+   viewBox="0 0 1440 24"
+   fill="none"
+   xmlns="http://www.w3.org/2000/svg"
+   preserveAspectRatio="none"
+  >
+   <path
+    d="M0 12 C120 6, 200 18, 360 12 C520 6, 600 16, 720 12 C840 8, 920 17, 1080 12 C1240 7, 1320 15, 1440 12"
+    stroke="#C8A97E"
+    stroke-width="0.8"
+    stroke-opacity="0.35"
+    fill="none"
+   />
+  </svg>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+   <div class="about-grid">
+    <div class="about-portrait">
+     <div class="portrait-placeholder">
+      <svg
+       width="64"
+       height="64"
+       viewBox="0 0 64 64"
+       fill="none"
+       xmlns="http://www.w3.org/2000/svg"
+      >
+       <circle cx="32" cy="22" r="12" stroke="#C8A97E" stroke-width="1.2" />
+       <path
+        d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24"
+        stroke="#C8A97E"
+        stroke-width="1.2"
+       />
+      </svg>
+      <span
+       style="
+        font-family: &quot;Space Mono&quot;, monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.15em;
+        color: #888070;
+       "
+       >Your photo here</span
+      >
+     </div>
+     <div class="portrait-caption">Melbourne, AU — Est. 2014</div>
+    </div>
+
+    <div class="about-content">
+     <p class="section-eyebrow">The artist</p>
+     <h2 class="section-title">Where the street meets the studio</h2>
+     <p class="section-body">
+      Info about the artist goes here. A brief bio that touches on their
+      background, style, and approach to tattooing. Something that gives a sense
+      of who they are and what they value in their work.
+     </p>
+     <p class="section-body" style="margin-top: 18px">
+      background of the artist, how they got into tattooing, their artistic
+      influences, and what they aim to create with their work. This is a chance
+      to connect with potential clients on a personal level and share the
+      philosophy behind the art.
+     </p>
+
+     <div class="about-stats">
+      <div>
+       <div class="stat-num">5+</div>
+       <div class="stat-label">Years tattooing</div>
+      </div>
+      <div>
+       <div class="stat-num">250+</div>
+       <div class="stat-label">Pieces created</div>
+      </div>
+      <div>
+       <div class="stat-num">1</div>
+       <div class="stat-label">Studio residencies</div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <svg
+   class="ink-divider"
+   viewBox="0 0 1440 24"
+   fill="none"
+   xmlns="http://www.w3.org/2000/svg"
+   preserveAspectRatio="none"
+  >
+   <path
+    d="M0 14 C180 8, 260 18, 480 12 C680 6, 780 20, 960 13 C1100 7, 1280 17, 1440 11"
+    stroke="#C8A97E"
+    stroke-width="0.8"
+    stroke-opacity="0.25"
+    fill="none"
+   />
+  </svg>
+
+  <!-- ── GALLERY ── -->
+  <section id="gallery">
+   <div class="gallery-header">
+    <p class="section-eyebrow">Art &amp; Photography</p>
+    <div
+     style="
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+     "
+    >
+     <h2 class="section-title" style="margin-bottom: 0">Selected works</h2>
+     <div class="gallery-tabs">
+      <span class="tab active">All</span>
+      <span class="tab">Photography</span>
+      <span class="tab">Illustration</span>
+      <span class="tab">Prints</span>
+     </div>
+    </div>
+   </div>
+
+   <div class="gallery-grid">
+    <div class="gallery-item">
+     <div class="gallery-placeholder">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+       <rect
+        x="2"
+        y="6"
+        width="32"
+        height="24"
+        rx="2"
+        stroke="#C8A97E"
+        stroke-width="1.2"
+       />
+       <circle cx="18" cy="18" r="6" stroke="#C8A97E" stroke-width="1.2" />
+      </svg>
+      Photography
+     </div>
+     <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
+    </div>
+    <div class="gallery-item">
+     <div class="gallery-placeholder">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+       <path
+        d="M6 30L14 16l8 10 6-7 8 11"
+        stroke="#C8A97E"
+        stroke-width="1.2"
+        stroke-linejoin="round"
+       />
+      </svg>
+      Illustration
+     </div>
+     <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
+    </div>
+    <div class="gallery-item">
+     <div class="gallery-placeholder">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+       <rect
+        x="4"
+        y="4"
+        width="28"
+        height="28"
+        rx="1"
+        stroke="#C8A97E"
+        stroke-width="1.2"
+       />
+       <path d="M10 18h16M18 10v16" stroke="#C8A97E" stroke-width="1.2" />
+      </svg>
+      Mixed media
+     </div>
+     <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
+    </div>
+    <div class="gallery-item">
+     <div class="gallery-placeholder">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+       <circle cx="18" cy="18" r="12" stroke="#C8A97E" stroke-width="1.2" />
+       <path
+        d="M18 10v8l5 3"
+        stroke="#C8A97E"
+        stroke-width="1.2"
+        stroke-linecap="round"
+       />
+      </svg>
+      Print
+     </div>
+     <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
+    </div>
+    <div class="gallery-item">
+     <div class="gallery-placeholder">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+       <rect
+        x="2"
+        y="6"
+        width="32"
+        height="24"
+        rx="2"
+        stroke="#C8A97E"
+        stroke-width="1.2"
+       />
+       <circle cx="18" cy="18" r="6" stroke="#C8A97E" stroke-width="1.2" />
+      </svg>
+      Photography
+     </div>
+     <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
+    </div>
+    <div class="gallery-item">
+     <div class="gallery-placeholder">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+       <path
+        d="M6 30L14 16l8 10 6-7 8 11"
+        stroke="#C8A97E"
+        stroke-width="1.2"
+        stroke-linejoin="round"
+       />
+      </svg>
+      Illustration
+     </div>
+     <div class="gallery-overlay"><span class="gallery-tag">View</span></div>
+    </div>
+   </div>
+  </section>
+
+  <svg
+   class="ink-divider"
+   viewBox="0 0 1440 24"
+   fill="none"
+   xmlns="http://www.w3.org/2000/svg"
+   preserveAspectRatio="none"
+   style="margin-top: 3px"
+  >
+   <path
+    d="M0 10 C200 16, 340 6, 600 13 C820 19, 980 7, 1200 14 C1300 17, 1380 9, 1440 12"
+    stroke="#C8A97E"
+    stroke-width="0.8"
+    stroke-opacity="0.25"
+    fill="none"
+   />
+  </svg>
+
+  <!-- ── TATTOO ── -->
+  <section id="tattoo">
+   <p class="section-eyebrow">Tattoo work</p>
+   <h2 class="section-title">The craft of permanent marks</h2>
+   <p class="section-body">
+    Every tattoo begins with a conversation. Andres' process is collaborative —
+    he wants to understand where it's going, what it means, and how it should
+    move with the body for decades to come.
+   </p>
+
+   <div class="tattoo-grid">
+    <div class="tattoo-card">
+     <div class="tattoo-img-placeholder">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+       <path d="M8 32s4-8 12-8 12 8 12 8" stroke="#C8A97E" stroke-width="1.2" />
+       <path
+        d="M20 12c0-4 6-4 6 0 0 6-6 12-6 12S14 18 14 12c0-4 6-4 6 0Z"
+        stroke="#C8A97E"
+        stroke-width="1.2"
+       />
+      </svg>
+      Tattoo photo
+     </div>
+     <div class="tattoo-style">Black &amp; Grey Realism</div>
+     <div class="tattoo-title">Portraiture &amp; Faces</div>
+     <p class="tattoo-desc">
+      Rendered with fine needle work and subtle gradient transitions that age
+      beautifully over time.
+     </p>
+    </div>
+    <div class="tattoo-card">
+     <div class="tattoo-img-placeholder">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+       <path
+        d="M20 6l3.09 9.51H33l-8.09 5.88 3.09 9.51L20 25.02l-7.99 5.88 3.09-9.51L7 15.51h9.91Z"
+        stroke="#C8A97E"
+        stroke-width="1.2"
+       />
+      </svg>
+      Tattoo photo
+     </div>
+     <div class="tattoo-style">Fine Line</div>
+     <div class="tattoo-title">Botanical &amp; Geometric</div>
+     <p class="tattoo-desc">
+      Delicate single-needle line work — clean, minimal, and precise.
+      Botanicals, constellations, architectural forms.
+     </p>
+    </div>
+    <div class="tattoo-card">
+     <div class="tattoo-img-placeholder">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+       <circle cx="20" cy="20" r="12" stroke="#C8A97E" stroke-width="1.2" />
+       <path
+        d="M14 20c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6"
+        stroke="#C8A97E"
+        stroke-width="1.2"
+       />
+      </svg>
+      Tattoo photo
+     </div>
+     <div class="tattoo-style">Illustrative</div>
+     <div class="tattoo-title">Custom Illustrative</div>
+     <p class="tattoo-desc">
+      Where Andres' background in illustration crosses over into the tattoo —
+      bold, original, narrative pieces.
+     </p>
+    </div>
+   </div>
+  </section>
+
+  <svg
+   class="ink-divider"
+   viewBox="0 0 1440 24"
+   fill="none"
+   xmlns="http://www.w3.org/2000/svg"
+   preserveAspectRatio="none"
+  >
+   <path
+    d="M0 13 C160 7, 280 19, 500 12 C700 5, 860 18, 1060 11 C1200 6, 1360 16, 1440 10"
+    stroke="#C8A97E"
+    stroke-width="0.8"
+    stroke-opacity="0.25"
+    fill="none"
+   />
+  </svg>
+
+  <!-- ── LOCATION ── -->
+  <section id="location">
+   <div class="location-inner">
+    <div>
+     <p class="section-eyebrow">Find me</p>
+     <h2 class="section-title">Based in Abbotsford, Melbourne</h2>
+
+     <div class="info-block">
+      <div class="info-label">Studio</div>
+      <div class="info-value">
+       Liquid Silver Tattoo<br />
+       58 Hoddle St, Abbotsford VIC 3067
+      </div>
+     </div>
+     <div class="info-block">
+      <div class="info-label">Walk-in hours</div>
+      <div class="info-value">Hours of walk-in</div>
+     </div>
+     <div class="info-block">
+      <div class="info-label">By appointment</div>
+      <div class="info-value">
+       days when they can contact or book appointments<br />Contact to arrange a
+       consultation
+      </div>
+     </div>
+     <div class="info-block">
+      <div class="info-label">Contact</div>
+      <div class="info-value">
+       Email address here<br />Follow Me On Instagram:@philipgrana_tattoo
+      </div>
+     </div>
+
+     <div style="margin-top: 36px">
+      <a href="#booking" class="btn-primary">Book a Consultation</a>
+     </div>
+    </div>
+
+    <div class="map-frame">
+     <!-- Replace src with actual Google Maps embed URL for the studio address -->
+     <iframe
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402938.7610065912!2d144.60130080625!3d-37.90801936770347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642e3107eff65%3A0x13ab18b426086939!2sLiquid%20Silver%20Tattoo!5e0!3m2!1sen!2sau!4v1781656073664!5m2!1sen!2sau"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Studio location map"
+     >
+     </iframe>
+     
+     <div class="map-pin-badge">Abbotsford, Melbourne VIC</div>
+    </div>
+   </div>
+  </section>
+
+  <svg
+   class="ink-divider"
+   viewBox="0 0 1440 24"
+   fill="none"
+   xmlns="http://www.w3.org/2000/svg"
+   preserveAspectRatio="none"
+  >
+   <path
+    d="M0 11 C240 17, 400 5, 640 13 C860 20, 1020 6, 1240 14 C1340 18, 1400 8, 1440 12"
+    stroke="#C8A97E"
+    stroke-width="0.8"
+    stroke-opacity="0.25"
+    fill="none"
+   />
+  </svg>
+
+  <!-- ── BOOKING ── -->
+  <section id="booking">
+   <div class="booking-inner">
+    <p class="section-eyebrow">Ready to start?</p>
+    <h2 class="section-title">Every great tattoo begins with a conversation</h2>
+    <p class="section-body">
+     Send through your idea — a reference, a feeling, a rough sketch, even just
+     a few words. Andres will get back to you within 48 hours to discuss the
+     piece and arrange a consultation.
+    </p>
+    <div class="hero-cta">
+     <a href="mailto:hello@philipgrana_tattoo.com" class="btn-primary"
+      >Get in touch</a
+     >
+     <a href="https://instagram.com/philipgrana_tattoo" class="btn-ghost"
+      >Instagram</a
+     >
+    </div>
+   </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+   <div class="footer-logo">Andres</div>
+   <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#gallery">Work</a>
+    <a href="#tattoo">Tattoo</a>
+    <a href="#location">Location</a>
+    <a href="#booking">Book</a>
+   </div>
+   <div>© 2026 Alphonse Chan. All rights reserved.</div>
+  </footer>
+
+  <script>
+   // Gallery tab switching
+   document.querySelectorAll(".tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+     document
+      .querySelectorAll(".tab")
+      .forEach((t) => t.classList.remove("active"));
+     tab.classList.add("active");
+    });
+   });
+
+   // Subtle parallax on hero rings
+   window.addEventListener(
+    "scroll",
+    () => {
+     const scrollY = window.scrollY;
+     const rings = document.querySelectorAll(".hero-ring");
+     rings.forEach((ring, i) => {
+      ring.style.transform = `translate(-50%, calc(-50% + ${scrollY * (0.05 + i * 0.03)}px))`;
+     });
+    },
+    { passive: true },
+   );
+  </script>
+ </body>
+</html>
