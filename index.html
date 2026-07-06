@@ -32,6 +32,9 @@
      <button id="lang-toggle" class="lang-toggle">ES</button>
     </li>
    </ul>
+   <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+   </button>
   </nav>
 
   <!-- ── HERO ── -->
@@ -76,7 +79,7 @@
   <!-- ── ABOUT ── -->
   <section id="about">
    <div class="about-grid">
-    <div class="about-portrait">
+    <div class="about-portrait reveal">
      <div class="portrait-placeholder">
       <svg
        width="64"
@@ -105,7 +108,7 @@
      <div class="portrait-caption">Melbourne, AU — Est. 2014</div>
     </div>
 
-    <div class="about-content">
+    <div class="about-content reveal" data-delay="150">
      <p class="section-eyebrow" data-i18n="about-eyebrow">The artist</p>
      <h2 class="section-title" data-i18n="about-title">Making your vision a reality</h2>
      <p class="section-body" data-i18n="about-body1">
@@ -156,7 +159,7 @@
 
   <!-- ── GALLERY ── -->
   <section id="gallery">
-   <div class="gallery-header">
+   <div class="gallery-header reveal">
     <p class="section-eyebrow" data-i18n="gallery-eyebrow">Art &amp; Photography</p>
     <div
      style="
@@ -259,7 +262,7 @@
    </p>
 
    <div class="tattoo-grid">
-    <div class="tattoo-card">
+    <div class="tattoo-card reveal">
      <div class="tattoo-img-placeholder">
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
        <path d="M8 32s4-8 12-8 12 8 12 8" stroke="#C8A97E" stroke-width="1.2" />
@@ -278,7 +281,7 @@
       beautifully over time.
      </p>
     </div>
-    <div class="tattoo-card">
+    <div class="tattoo-card reveal" data-delay="100">
      <div class="tattoo-img-placeholder">
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
        <path
@@ -296,7 +299,7 @@
       Botanicals, constellations, architectural forms.
      </p>
     </div>
-    <div class="tattoo-card">
+    <div class="tattoo-card reveal" data-delay="200">
      <div class="tattoo-img-placeholder">
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
        <circle cx="20" cy="20" r="12" stroke="#C8A97E" stroke-width="1.2" />
@@ -371,7 +374,7 @@
      </div>
     </div>
 
-    <div class="map-frame">
+    <div class="map-frame reveal" data-delay="150">
      <!-- Replace src with actual Google Maps embed URL for the studio address -->
      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402938.7610065912!2d144.60130080625!3d-37.90801936770347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642e3107eff65%3A0x13ab18b426086939!2sLiquid%20Silver%20Tattoo!5e0!3m2!1sen!2sau!4v1781656073664!5m2!1sen!2sau"
       allowfullscreen=""
@@ -404,7 +407,7 @@
 
   <!-- ── BOOKING ── -->
   <section id="booking">
-   <div class="booking-inner">
+   <div class="booking-inner reveal">
     <p class="section-eyebrow" data-i18n="book-eyebrow">Ready to start?</p>
     <h2 class="section-title" data-i18n="book-title">Every great tattoo begins with a conversation</h2>
     <p class="section-body" data-i18n="book-body">
@@ -579,18 +582,66 @@
     });
    });
 
-   // Subtle parallax on hero rings
+   // Scroll: parallax rings + nav scrolled state
+   const nav = document.querySelector("nav");
    window.addEventListener(
     "scroll",
     () => {
      const scrollY = window.scrollY;
-     const rings = document.querySelectorAll(".hero-ring");
-     rings.forEach((ring, i) => {
+     document.querySelectorAll(".hero-ring").forEach((ring, i) => {
       ring.style.transform = `translate(-50%, calc(-50% + ${scrollY * (0.05 + i * 0.03)}px))`;
      });
+     nav.classList.toggle("scrolled", scrollY > 60);
     },
     { passive: true },
    );
+
+   // Scroll reveal
+   const revealObserver = new IntersectionObserver(
+    (entries) => {
+     entries.forEach((e) => {
+      if (e.isIntersecting) {
+       const delay = parseInt(e.target.dataset.delay) || 0;
+       setTimeout(() => e.target.classList.add("visible"), delay);
+       revealObserver.unobserve(e.target);
+      }
+     });
+    },
+    { threshold: 0.1 },
+   );
+   document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+   // Active nav link on scroll
+   const sectionIds = ["hero", "about", "gallery", "tattoo", "location", "booking"];
+   const navAnchors = document.querySelectorAll('nav ul a[href^="#"]');
+   const sectionEls = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+   const sectionObserver = new IntersectionObserver(
+    (entries) => {
+     entries.forEach((e) => {
+      if (e.isIntersecting) {
+       navAnchors.forEach((a) => {
+        a.classList.toggle("nav-active", a.getAttribute("href") === "#" + e.target.id);
+       });
+      }
+     });
+    },
+    { rootMargin: "-40% 0px -55% 0px" },
+   );
+   sectionEls.forEach((el) => sectionObserver.observe(el));
+
+   // Hamburger menu
+   const hamburger = document.getElementById("nav-hamburger");
+   const navUl = document.querySelector("nav ul");
+   hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    navUl.classList.toggle("open");
+   });
+   navUl.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+     hamburger.classList.remove("open");
+     navUl.classList.remove("open");
+    });
+   });
   </script>
  </body>
 </html>
