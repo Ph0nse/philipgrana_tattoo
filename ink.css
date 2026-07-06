@@ -909,6 +909,14 @@ nav ul a.nav-active {
 
 /* Phone: stacked CTAs, 1-column gallery, tighter rings */
 @media (max-width: 600px) {
+ .gallery-tabs {
+  gap: 10px 14px;
+  flex-wrap: wrap;
+ }
+ .tab {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+ }
  #hero {
   padding-bottom: 14vh;
  }
