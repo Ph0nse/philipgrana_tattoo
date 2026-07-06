@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1440" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+   :root {
+    --ink: #0d0d0d;
+    --paper: #f0ead6;
+    --gold: #c8a97e;
+    --muted: #888070;
+    --card: #1a1a1a;
+   }
+
+   body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    width: 1440px;
+   }
+
+   /* ── COVER ── */
+   .cover {
+    padding: 80px 100px 72px;
+    border-bottom: 1px solid rgba(200,169,126,0.18);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: linear-gradient(135deg, rgba(107,79,58,0.08) 0%, transparent 60%);
+   }
+
+   .cover-label {
+    font-family: "Space Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+   }
+
+   .cover-title {
+    font-family: "Cinzel", serif;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--paper);
+   }
+
+   .cover-title span { color: var(--gold); }
+
+   .cover-sub {
+    font-family: "Cinzel", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    margin-top: 16px;
+   }
+
+   .cover-right {
+    text-align: right;
+    font-family: "Space Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 2.2;
+   }
+
+   .cover-right .highlight { color: var(--gold); }
+
+   /* ── SECTION WRAPPER ── */
+   .section {
+    padding: 72px 100px;
+    border-bottom: 1px solid rgba(200,169,126,0.1);
+   }
+
+   .section-label {
+    font-family: "Space Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+   }
+
+   .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(200,169,126,0.18);
+   }
+
+   /* ── DEVICE PREVIEWS ── */
+   .devices {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+   }
+
+   .device-desktop { flex: none; width: 672px; }
+   .device-tablet  { flex: none; width: 370px; }
+   .device-mobile  { flex: none; width: 196px; }
+
+   .device-label {
+    font-family: "Space Mono", monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+   }
+
+   .device-frame {
+    border: 1px solid rgba(200,169,126,0.2);
+    overflow: hidden;
+    position: relative;
+   }
+
+   .device-frame img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+   }
+
+   .device-frame::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 90px;
+    background: linear-gradient(transparent, rgba(13,13,13,0.92));
+    pointer-events: none;
+   }
+
+   /* ── RATIONALE GRID ── */
+   .rationale-grid {
+    display: grid;
+    grid-template-columns: 320px 340px 1fr;
+    gap: 72px;
+   }
+
+   .rationale-block h3 {
+    font-family: "Space Mono", monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(200,169,126,0.15);
+   }
+
+   /* Color swatches */
+   .swatches { display: flex; flex-direction: column; gap: 14px; }
+
+   .swatch { display: flex; align-items: center; gap: 16px; }
+
+   .swatch-dot {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(200,169,126,0.15);
+    flex: none;
+   }
+
+   .swatch-name {
+    font-family: "Cinzel", serif;
+    font-size: 0.82rem;
+    color: var(--paper);
+    display: block;
+   }
+
+   .swatch-meta {
+    font-family: "Space Mono", monospace;
+    font-size: 0.54rem;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-top: 3px;
+    display: block;
+   }
+
+   /* Typography */
+   .type-samples { display: flex; flex-direction: column; gap: 24px; }
+
+   .type-tag {
+    font-family: "Space Mono", monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 7px;
+   }
+
+   .type-cinzel {
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--paper);
+    line-height: 1;
+   }
+
+   .type-cormorant {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(240,234,214,0.78);
+    line-height: 1.6;
+   }
+
+   .type-mono {
+    font-family: "Space Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+   }
+
+   /* Features */
+   .features { display: flex; flex-direction: column; }
+
+   .feature {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(200,169,126,0.08);
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+   }
+
+   .feature:first-child { padding-top: 0; }
+
+   .feature-num {
+    font-family: "Cinzel", serif;
+    font-size: 0.7rem;
+    color: var(--gold);
+    opacity: 0.55;
+    flex: none;
+    width: 22px;
+   }
+
+   .feature-text {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: rgba(240,234,214,0.7);
+   }
+
+   .feature-text strong {
+    color: var(--paper);
+    font-weight: 500;
+   }
+
+   /* ── FOOTER ── */
+   .footer {
+    padding: 36px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Space Mono", monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+   }
+
+   .footer-brand {
+    font-family: "Cinzel", serif;
+    font-size: 0.82rem;
+    color: var(--gold);
+    letter-spacing: 0.22em;
+   }
+  </style>
+ </head>
+ <body>
+
+  <!-- ── COVER ── -->
+  <div class="cover">
+   <div>
+    <div class="cover-label">Website Design Presentation</div>
+    <div class="cover-title">Philipgrana<br /><span>Tattoo</span></div>
+    <div class="cover-sub">Visual Identity &amp; Web Design — 2026</div>
+   </div>
+   <div class="cover-right">
+    <div>Prepared for Philip Grana</div>
+    <div>Liquid Silver Tattoo, Melbourne</div>
+    <div>July 2026</div>
+    <div style="margin-top:14px;" class="highlight">@philipgrana_tattoo</div>
+   </div>
+  </div>
+
+  <!-- ── DEVICE PREVIEWS ── -->
+  <div class="section">
+   <div class="section-label">01 — Responsive Previews</div>
+   <div class="devices">
+    <div class="device-desktop">
+     <div class="device-label"><span>Desktop</span><span>1440 px</span></div>
+     <div class="device-frame">
+      <img src="design-preview-desktop.png" alt="Desktop view" />
+     </div>
+    </div>
+    <div class="device-tablet">
+     <div class="device-label"><span>Tablet</span><span>768 px</span></div>
+     <div class="device-frame">
+      <img src="design-preview-tablet.png" alt="Tablet view" />
+     </div>
+    </div>
+    <div class="device-mobile">
+     <div class="device-label"><span>Mobile</span><span>390 px</span></div>
+     <div class="device-frame">
+      <img src="design-preview-mobile.png" alt="Mobile view" />
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <!-- ── DESIGN RATIONALE ── -->
+  <div class="section">
+   <div class="section-label">02 — Design Rationale</div>
+   <div class="rationale-grid">
+
+    <!-- Color Palette -->
+    <div class="rationale-block">
+     <h3>Color Palette</h3>
+     <div class="swatches">
+      <div class="swatch">
+       <div class="swatch-dot" style="background:#0d0d0d;"></div>
+       <div>
+        <span class="swatch-name">Ink</span>
+        <span class="swatch-meta">#0d0d0d — Background</span>
+       </div>
+      </div>
+      <div class="swatch">
+       <div class="swatch-dot" style="background:#f0ead6;"></div>
+       <div>
+        <span class="swatch-name">Paper</span>
+        <span class="swatch-meta">#f0ead6 — Primary Text</span>
+       </div>
+      </div>
+      <div class="swatch">
+       <div class="swatch-dot" style="background:#c8a97e;"></div>
+       <div>
+        <span class="swatch-name">Gold</span>
+        <span class="swatch-meta">#c8a97e — Accents &amp; CTAs</span>
+       </div>
+      </div>
+      <div class="swatch">
+       <div class="swatch-dot" style="background:#1a1a1a;"></div>
+       <div>
+        <span class="swatch-name">Card</span>
+        <span class="swatch-meta">#1a1a1a — Surface Panels</span>
+       </div>
+      </div>
+      <div class="swatch">
+       <div class="swatch-dot" style="background:#888070;"></div>
+       <div>
+        <span class="swatch-name">Muted</span>
+        <span class="swatch-meta">#888070 — Secondary Text</span>
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <!-- Typography -->
+    <div class="rationale-block">
+     <h3>Typography</h3>
+     <div class="type-samples">
+      <div>
+       <div class="type-tag">Cinzel — Display &amp; Headings</div>
+       <div class="type-cinzel">Tattoo</div>
+      </div>
+      <div>
+       <div class="type-tag">Cormorant Garamond — Body</div>
+       <div class="type-cormorant">Ink, photography, and handcrafted visual art — rooted in a deep respect for the human body as a living canvas.</div>
+      </div>
+      <div>
+       <div class="type-tag">Space Mono — Labels &amp; UI</div>
+       <div class="type-mono">Book a Session</div>
+      </div>
+     </div>
+    </div>
+
+    <!-- Key Design Decisions -->
+    <div class="rationale-block">
+     <h3>Design Decisions</h3>
+     <div class="features">
+      <div class="feature">
+       <div class="feature-num">01</div>
+       <div class="feature-text"><strong>Dark luxury aesthetic</strong> — ink-black with warm gold accents mirrors the permanence and prestige of fine tattoo work, immediately communicating the artist's positioning.</div>
+      </div>
+      <div class="feature">
+       <div class="feature-num">02</div>
+       <div class="feature-text"><strong>Three-font hierarchy</strong> — Cinzel for drama, Cormorant Garamond for editorial warmth, Space Mono for clinical precision. Together they balance art and professionalism.</div>
+      </div>
+      <div class="feature">
+       <div class="feature-num">03</div>
+       <div class="feature-text"><strong>Asymmetric gallery grid</strong> — varied column spans (5/4/3) create a dynamic editorial layout rather than a static portfolio grid, with lightbox and category filtering built in.</div>
+      </div>
+      <div class="feature">
+       <div class="feature-num">04</div>
+       <div class="feature-text"><strong>Bilingual EN / ES</strong> — full site translation toggle for English and Spanish audiences, with all strings handled client-side for instant switching.</div>
+      </div>
+      <div class="feature">
+       <div class="feature-num">05</div>
+       <div class="feature-text"><strong>Scroll-reveal &amp; active nav</strong> — sections animate in as the user scrolls, and the navigation highlights the current section, giving the site a refined editorial feel throughout.</div>
+      </div>
+     </div>
+    </div>
+
+   </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer">
+   <div class="footer-brand">Philipgrana Tattoo</div>
+   <div>Website Design Presentation — July 2026</div>
+   <div>Liquid Silver Tattoo · Abbotsford VIC · @philipgrana_tattoo</div>
+  </div>
+
+ </body>
+</html>
