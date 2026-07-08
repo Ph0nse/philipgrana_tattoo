@@ -57,6 +57,52 @@ document.addEventListener("keydown", (e) => {
  if (e.key === "Escape") lightbox.classList.remove("active");
 });
 
+// Tattoo style samples modal
+const styleModal = document.getElementById("style-modal");
+const styleModalEyebrow = document.getElementById("style-modal-eyebrow");
+const styleModalTitle = document.getElementById("style-modal-title");
+const styleModalGrid = document.getElementById("style-modal-grid");
+const styleModalClose = document.getElementById("style-modal-close");
+const SAMPLE_COUNT = 6;
+
+function openStyleModal(card) {
+ const style = card.querySelector(".tattoo-style");
+ const title = card.querySelector(".tattoo-title");
+ styleModalEyebrow.textContent = style ? style.textContent : "";
+ styleModalTitle.textContent = title ? title.textContent : "";
+
+ styleModalGrid.innerHTML = "";
+ for (let i = 0; i < SAMPLE_COUNT; i++) {
+  const img = document.createElement("img");
+  img.src = "img/placeholder_tattoo.jpg";
+  img.alt = (title ? title.textContent : "Tattoo style") + " sample " + (i + 1);
+  styleModalGrid.appendChild(img);
+ }
+
+ styleModal.classList.add("active");
+}
+
+function closeStyleModal() {
+ styleModal.classList.remove("active");
+}
+
+document.querySelectorAll(".tattoo-card").forEach((card) => {
+ card.addEventListener("click", () => openStyleModal(card));
+});
+
+styleModalClose.addEventListener("click", (e) => {
+ e.stopPropagation();
+ closeStyleModal();
+});
+
+styleModal.addEventListener("click", (e) => {
+ if (e.target === styleModal) closeStyleModal();
+});
+
+document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape") closeStyleModal();
+});
+
 // Translation
 const translations = {
  es: {
@@ -96,6 +142,7 @@ const translations = {
   "tattoo-style3": "Ilustrativo",
   "tattoo-title3": "Ilustrativo personalizado",
   "tattoo-desc3": "Donde la formación en ilustración se cruza con el tatuaje — piezas audaces, originales y narrativas.",
+  "tattoo-more-cta": "Haz clic para ver más muestras →",
   "process-eyebrow": "Cómo funciona",
   "process-title": "De la idea a la tinta",
   "process-body": "Cada pieza sigue el mismo camino cuidadoso — desde la primera conversación hasta la piel sanada — para que siempre sepas qué esperar.",
