@@ -4,11 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Philipgrana Tattoo and Art</title>
+  <meta
+   name="description"
+   content="Custom tattoo artist in Melbourne blending fine line, botanical, portraiture and illustrative work with original art and photography. Book your consultation today."
+  />
+  <meta name="theme-color" content="#0d0d0d" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Open Graph / social sharing preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Philipgrana Tattoo — Melbourne Tattoo Artist & Visual Creator" />
+  <meta
+   property="og:description"
+   content="Custom tattoo artist in Melbourne blending fine line, botanical, portraiture and illustrative work with original art and photography."
+  />
+  <meta property="og:image" content="img/placeholder_tattoo.jpg" />
+  <!-- TODO: once the site has a live domain, add absolute og:url / og:image and a <link rel="canonical"> -->
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Philipgrana Tattoo — Melbourne Tattoo Artist & Visual Creator" />
+  <meta
+   name="twitter:description"
+   content="Custom tattoo artist in Melbourne blending fine line, botanical, portraiture and illustrative work with original art and photography."
+  />
+  <meta name="twitter:image" content="img/placeholder_tattoo.jpg" />
+
   <link
-   href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Space+Mono:wght@400;700&display=swap"
+   href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:wght@400;700&display=swap"
    rel="stylesheet"
   />
   <link rel="stylesheet" href="ink.css" />
+
+  <!-- Structured data: fill in phone/openingHours once finalized -->
+  <script type="application/ld+json">
+   {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "additionalType": "https://schema.org/TattooParlor",
+    "name": "Philipgrana Tattoo",
+    "description": "Custom tattoo artist and visual creator in Melbourne, specializing in fine line, botanical, portraiture, and illustrative tattoos, plus original art and photography.",
+    "image": "img/placeholder_tattoo.jpg",
+    "address": {
+     "@type": "PostalAddress",
+     "streetAddress": "58 Hoddle St",
+     "addressLocality": "Abbotsford",
+     "addressRegion": "VIC",
+     "postalCode": "3067",
+     "addressCountry": "AU"
+    },
+    "sameAs": ["https://www.instagram.com/philipgrana_tattoo/"]
+   }
+  </script>
  </head>
  <body>
   <!-- ── NAV ── -->
@@ -40,6 +86,11 @@
   <!-- ── HERO ── -->
   <div id="hero">
    <div class="hero-bg"></div>
+   <div class="hero-glow-wrap" aria-hidden="true">
+    <div class="hero-orb hero-orb--gold"></div>
+    <div class="hero-orb hero-orb--copper"></div>
+    <div class="hero-orb hero-orb--pale"></div>
+   </div>
    <div class="hero-ring"></div>
    <div class="hero-ring"></div>
    <div class="hero-ring"></div>
@@ -100,7 +151,6 @@
         font-family: &quot;Space Mono&quot;, monospace;
         font-size: 0.6rem;
         letter-spacing: 0.15em;
-        color: #888070;
        "
        >Your photo here</span
       >
@@ -337,6 +387,305 @@
    />
   </svg>
 
+  <!-- ── PROCESS ── -->
+  <section id="process">
+   <p class="section-eyebrow" data-i18n="process-eyebrow">How it works</p>
+   <h2 class="section-title" data-i18n="process-title">From idea to ink</h2>
+   <p class="section-body" data-i18n="process-body">
+    Every piece follows the same careful path — from first conversation to
+    healed skin — so you always know what to expect.
+   </p>
+
+   <div class="process-grid">
+    <div class="process-step reveal">
+     <div class="process-num">01</div>
+     <div class="process-title" data-i18n="process-step1-title">Consultation</div>
+     <p class="process-desc" data-i18n="process-step1-desc">
+      Share your idea, placement, and size in person or via Instagram — we
+      talk through style, feasibility, and what will hold up long-term.
+     </p>
+    </div>
+    <div class="process-step reveal" data-delay="100">
+     <div class="process-num">02</div>
+     <div class="process-title" data-i18n="process-step2-title">Custom Design</div>
+     <p class="process-desc" data-i18n="process-step2-desc">
+      A one-of-a-kind design is drawn up from your consultation and refined
+      with you until it's exactly right before the session is booked.
+     </p>
+    </div>
+    <div class="process-step reveal" data-delay="200">
+     <div class="process-num">03</div>
+     <div class="process-title" data-i18n="process-step3-title">The Session</div>
+     <p class="process-desc" data-i18n="process-step3-desc">
+      Tattooed in a clean, private studio space, with breaks built in for
+      longer or larger pieces so you're comfortable throughout.
+     </p>
+    </div>
+    <div class="process-step reveal" data-delay="300">
+     <div class="process-num">04</div>
+     <div class="process-title" data-i18n="process-step4-title">Aftercare &amp; Touch-ups</div>
+     <p class="process-desc" data-i18n="process-step4-desc">
+      Clear aftercare guidance is provided on the day, plus a complimentary
+      touch-up once the piece has fully healed.
+     </p>
+    </div>
+   </div>
+  </section>
+
+  <svg
+   class="ink-divider"
+   viewBox="0 0 1440 24"
+   fill="none"
+   xmlns="http://www.w3.org/2000/svg"
+   preserveAspectRatio="none"
+  >
+   <path
+    d="M0 11 C220 18, 380 4, 620 13 C840 21, 1000 5, 1220 14 C1320 18, 1380 8, 1440 12"
+    stroke="#C8A97E"
+    stroke-width="0.8"
+    stroke-opacity="0.25"
+    fill="none"
+   />
+  </svg>
+
+  <!-- ── FAQ ── -->
+  <section id="faq">
+   <p class="section-eyebrow" data-i18n="faq-eyebrow">Good to know</p>
+   <h2 class="section-title" data-i18n="faq-title">Frequently asked questions</h2>
+
+   <div class="faq-list">
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false">
+      <span data-i18n="faq-q1">Do I need a consultation before my session?</span>
+      <span class="faq-icon">+</span>
+     </button>
+     <div class="faq-answer">
+      <p data-i18n="faq-a1">
+       Yes — every piece starts with a short consultation, in person or via
+       Instagram, to talk through placement, size, and design direction
+       before a session is booked.
+      </p>
+     </div>
+    </div>
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false">
+      <span data-i18n="faq-q2">Do you require a deposit?</span>
+      <span class="faq-icon">+</span>
+     </button>
+     <div class="faq-answer">
+      <p data-i18n="faq-a2">
+       A non-refundable deposit is required to secure your appointment and
+       comes off the final price. Deposits are forfeited for no-shows or
+       cancellations with less than 48 hours' notice.
+      </p>
+     </div>
+    </div>
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false">
+      <span data-i18n="faq-q3">Do you take walk-ins?</span>
+      <span class="faq-icon">+</span>
+     </button>
+     <div class="faq-answer">
+      <p data-i18n="faq-a3">
+       Limited walk-in slots are available for smaller, simpler designs —
+       check the studio hours below, or message ahead to check availability.
+      </p>
+     </div>
+    </div>
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false">
+      <span data-i18n="faq-q4">What's the minimum age for a tattoo?</span>
+      <span class="faq-icon">+</span>
+     </button>
+     <div class="faq-answer">
+      <p data-i18n="faq-a4">
+       You must be 18 or older, with valid photo ID, to be tattooed — no
+       exceptions.
+      </p>
+     </div>
+    </div>
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false">
+      <span data-i18n="faq-q5">How much will my tattoo cost?</span>
+      <span class="faq-icon">+</span>
+     </button>
+     <div class="faq-answer">
+      <p data-i18n="faq-a5">
+       Pricing depends on size, placement, and detail. You'll get an estimate
+       at your consultation, before any deposit is taken.
+      </p>
+     </div>
+    </div>
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false">
+      <span data-i18n="faq-q6">Do you offer touch-ups?</span>
+      <span class="faq-icon">+</span>
+     </button>
+     <div class="faq-answer">
+      <p data-i18n="faq-a6">
+       Yes — a complimentary touch-up is included within 6 weeks of your
+       session, once the tattoo has fully healed.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <svg
+   class="ink-divider"
+   viewBox="0 0 1440 24"
+   fill="none"
+   xmlns="http://www.w3.org/2000/svg"
+   preserveAspectRatio="none"
+  >
+   <path
+    d="M0 10 C240 19, 420 4, 660 14 C860 22, 1040 5, 1260 15 C1350 19, 1400 7, 1440 12"
+    stroke="#C8A97E"
+    stroke-width="0.8"
+    stroke-opacity="0.25"
+    fill="none"
+   />
+  </svg>
+
+  <!-- ── AFTERCARE ── -->
+  <section id="aftercare">
+   <p class="section-eyebrow" data-i18n="aftercare-eyebrow">Healing &amp; care</p>
+   <h2 class="section-title" data-i18n="aftercare-title">Aftercare instructions</h2>
+   <p class="section-body" data-i18n="aftercare-body">
+    Proper aftercare shapes how your tattoo heals and ages. Follow these
+    steps closely for the first few weeks.
+   </p>
+
+   <div class="aftercare-list">
+    <div class="aftercare-item reveal">
+     <div class="aftercare-num">01</div>
+     <p class="aftercare-text" data-i18n="aftercare-step1">
+      Leave the initial bandage on for 2–4 hours (or as instructed), then
+      remove it gently.
+     </p>
+    </div>
+    <div class="aftercare-item reveal">
+     <div class="aftercare-num">02</div>
+     <p class="aftercare-text" data-i18n="aftercare-step2">
+      Wash with lukewarm water and a fragrance-free antibacterial soap,
+      patting dry with a clean paper towel — never rub.
+     </p>
+    </div>
+    <div class="aftercare-item reveal">
+     <div class="aftercare-num">03</div>
+     <p class="aftercare-text" data-i18n="aftercare-step3">
+      Apply a thin layer of fragrance-free, tattoo-safe moisturizer 2–3
+      times a day. A little goes a long way.
+     </p>
+    </div>
+    <div class="aftercare-item reveal">
+     <div class="aftercare-num">04</div>
+     <p class="aftercare-text" data-i18n="aftercare-step4">
+      Avoid soaking the tattoo — no swimming, baths, or saunas — for at
+      least two weeks.
+     </p>
+    </div>
+    <div class="aftercare-item reveal">
+     <div class="aftercare-num">05</div>
+     <p class="aftercare-text" data-i18n="aftercare-step5">
+      Keep it out of direct sunlight while healing, and use SPF once healed
+      to protect the linework and colour long-term.
+     </p>
+    </div>
+    <div class="aftercare-item reveal">
+     <div class="aftercare-num">06</div>
+     <p class="aftercare-text" data-i18n="aftercare-step6">
+      Wear loose, breathable clothing over the area and avoid tight fabric
+      rubbing against it.
+     </p>
+    </div>
+    <div class="aftercare-item reveal">
+     <div class="aftercare-num">07</div>
+     <p class="aftercare-text" data-i18n="aftercare-step7">
+      Don't pick or scratch any peeling or scabbing skin — let it flake off
+      naturally.
+     </p>
+    </div>
+    <div class="aftercare-item reveal">
+     <div class="aftercare-num">08</div>
+     <p class="aftercare-text" data-i18n="aftercare-step8">
+      Contact the studio if you notice excessive redness, swelling, or
+      discharge — signs of possible infection.
+     </p>
+    </div>
+   </div>
+
+   <p class="aftercare-note" data-i18n="aftercare-note">
+    Questions during healing? Message the studio any time on Instagram.
+   </p>
+  </section>
+
+  <svg
+   class="ink-divider"
+   viewBox="0 0 1440 24"
+   fill="none"
+   xmlns="http://www.w3.org/2000/svg"
+   preserveAspectRatio="none"
+  >
+   <path
+    d="M0 12 C200 6, 340 17, 560 11 C760 5, 900 19, 1100 13 C1240 8, 1340 16, 1440 11"
+    stroke="#C8A97E"
+    stroke-width="0.8"
+    stroke-opacity="0.25"
+    fill="none"
+   />
+  </svg>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section id="testimonials">
+   <p class="section-eyebrow" data-i18n="testimonials-eyebrow">Client stories</p>
+   <h2 class="section-title" data-i18n="testimonials-title">What clients are saying</h2>
+
+   <div class="testimonial-grid">
+    <div class="testimonial-card reveal">
+     <div class="testimonial-mark">&ldquo;</div>
+     <p class="testimonial-quote" data-i18n="testimonial1-quote">
+      Andres took the time to understand exactly what I wanted and turned a
+      rough idea into a piece I'll love forever. The whole process felt calm
+      and professional.
+     </p>
+     <div class="testimonial-author" data-i18n="testimonial1-author">Jordan M. — Fine line piece</div>
+    </div>
+    <div class="testimonial-card reveal" data-delay="100">
+     <div class="testimonial-mark">&ldquo;</div>
+     <p class="testimonial-quote" data-i18n="testimonial2-quote">
+      Best tattoo experience I've had. Clean studio, great conversation, and
+      the linework is incredibly precise.
+     </p>
+     <div class="testimonial-author" data-i18n="testimonial2-author">Maya T. — Botanical piece</div>
+    </div>
+    <div class="testimonial-card reveal" data-delay="200">
+     <div class="testimonial-mark">&ldquo;</div>
+     <p class="testimonial-quote" data-i18n="testimonial3-quote">
+      I came in with just a feeling and a few reference photos — Andres
+      translated it into something better than I imagined.
+     </p>
+     <div class="testimonial-author" data-i18n="testimonial3-author">Sam R. — Illustrative piece</div>
+    </div>
+   </div>
+  </section>
+
+  <svg
+   class="ink-divider"
+   viewBox="0 0 1440 24"
+   fill="none"
+   xmlns="http://www.w3.org/2000/svg"
+   preserveAspectRatio="none"
+  >
+   <path
+    d="M0 13 C160 7, 280 19, 500 12 C700 5, 860 18, 1060 11 C1200 6, 1360 16, 1440 10"
+    stroke="#C8A97E"
+    stroke-width="0.8"
+    stroke-opacity="0.25"
+    fill="none"
+   />
+  </svg>
+
   <!-- ── LOCATION ── -->
   <section id="location">
    <div class="location-inner">
@@ -428,11 +777,15 @@
 
   <!-- ── FOOTER ── -->
   <footer>
-   <div class="footer-logo">Andres</div>
+   <div class="footer-logo">Philipgrana Tattoo</div>
    <div class="footer-links">
     <a href="#about">About</a>
     <a href="#gallery">Work</a>
     <a href="#tattoo">Tattoo</a>
+    <a href="#process">Process</a>
+    <a href="#faq">FAQ</a>
+    <a href="#aftercare">Aftercare</a>
+    <a href="#testimonials">Reviews</a>
     <a href="#location">Location</a>
     <a href="#booking">Book</a>
    </div>
@@ -444,204 +797,6 @@
    <img src="" alt="" />
   </div>
 
-  <script>
-   // Gallery tab filtering
-   const tabs = document.querySelectorAll(".tab");
-   const allItems = document.querySelectorAll(".gallery-item");
-
-   function applyFilter(filter) {
-    let pos = 0;
-    allItems.forEach((item) => {
-     item.className = item.className.replace(/\bpos-\d+\b/g, "").trim();
-
-     let show = false;
-     if (filter === "preview") {
-      show = item.hasAttribute("data-preview");
-     } else {
-      show = item.dataset.category === filter;
-     }
-
-     if (show) {
-      item.style.display = "";
-      pos++;
-      item.classList.add("pos-" + ((pos - 1) % 6 + 1));
-     } else {
-      item.style.display = "none";
-     }
-    });
-   }
-
-   applyFilter("preview");
-
-   tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-     tabs.forEach((t) => t.classList.remove("active"));
-     tab.classList.add("active");
-     applyFilter(tab.dataset.filter);
-    });
-   });
-
-   // Lightbox
-   const lightbox = document.getElementById("lightbox");
-   const lightboxImg = lightbox.querySelector("img");
-
-   document.querySelectorAll(".gallery-item").forEach((item) => {
-    item.addEventListener("click", () => {
-     const img = item.querySelector(".gallery-img");
-     if (img) {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add("active");
-     }
-    });
-   });
-
-   lightbox.addEventListener("click", () => {
-    lightbox.classList.remove("active");
-   });
-
-   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") lightbox.classList.remove("active");
-   });
-
-   // Translation
-   const translations = {
-    es: {
-     "nav-about": "Acerca",
-     "nav-work": "Trabajos",
-     "nav-tattoo": "Tatuaje",
-     "nav-location": "Ubicación",
-     "nav-book": "Reservar",
-     "nav-follow": "Sígueme en:",
-     "hero-eyebrow": "Tatuador y creador visual",
-     "hero-sub": "Tinta, fotografía y arte visual hecho a mano — con un profundo respeto por el cuerpo humano como lienzo vivo.",
-     "hero-cta-book": "Reservar una sesión",
-     "hero-cta-work": "Ver trabajos",
-     "about-eyebrow": "El artista",
-     "about-title": "Haciendo tu visión realidad",
-     "about-body1": "Información sobre el artista va aquí. Una breve biografía que abarca su trayectoria, estilo y enfoque del tatuaje. Algo que transmita quién es y qué valora en su trabajo.",
-     "about-body2": "Trayectoria del artista, cómo se inició en el tatuaje, sus influencias artísticas y lo que busca crear con su trabajo. Esta es una oportunidad de conectar con clientes potenciales a nivel personal y compartir la filosofía detrás del arte.",
-     "stat-years": "Años tatuando",
-     "stat-pieces": "Piezas creadas",
-     "stat-exp": "Años de experiencia",
-     "gallery-eyebrow": "Arte y fotografía",
-     "gallery-title": "Trabajos seleccionados",
-     "tab-preview": "Vista previa",
-     "tab-photo": "Fotografía",
-     "tab-illust": "Ilustración",
-     "tab-tattoo": "Tatuaje",
-     "tattoo-eyebrow": "Trabajo de tatuaje",
-     "tattoo-title": "El oficio de las marcas permanentes",
-     "tattoo-body": "Cada tatuaje comienza con una conversación. El proceso es colaborativo — quiere entender dónde irá, qué significa y cómo se moverá con el cuerpo durante décadas.",
-     "tattoo-style1": "Realismo en blanco y negro",
-     "tattoo-title1": "Retratos y rostros",
-     "tattoo-desc1": "Realizados con trabajo de aguja fina y transiciones de degradado sutiles que envejecen bellamente con el tiempo.",
-     "tattoo-style2": "Línea fina",
-     "tattoo-title2": "Botánico y geométrico",
-     "tattoo-desc2": "Delicado trabajo de línea con aguja única — limpio, minimalista y preciso. Botánicos, constelaciones, formas arquitectónicas.",
-     "tattoo-style3": "Ilustrativo",
-     "tattoo-title3": "Ilustrativo personalizado",
-     "tattoo-desc3": "Donde la formación en ilustración se cruza con el tatuaje — piezas audaces, originales y narrativas.",
-     "loc-eyebrow": "Encuéntrame",
-     "loc-title": "Con base en Melbourne",
-     "loc-studio": "Estudio",
-     "loc-walkin": "Horario sin cita",
-     "loc-walkin-val": "Horario de atención sin cita",
-     "loc-appt": "Con cita previa",
-     "loc-appt-val": "Días disponibles para contacto o reserva de citas<br />Contactar para coordinar una consulta",
-     "loc-contact": "Contacto",
-     "loc-cta": "Reservar una consulta",
-     "book-eyebrow": "¿Listo para empezar?",
-     "book-title": "Todo gran tatuaje comienza con una conversación",
-     "book-body": "Envía tu idea — una referencia, un sentimiento, un boceto, incluso solo unas palabras. Te responderemos en 48 horas para hablar sobre la pieza y coordinar una consulta.",
-     "book-cta": "Contactar",
-     "lightbox-close": "Cerrar",
-    }
-   };
-
-   let currentLang = "en";
-   const savedEN = {};
-
-   document.querySelectorAll("[data-i18n]").forEach((el) => {
-    savedEN[el.dataset.i18n] = el.innerHTML;
-   });
-
-   document.getElementById("lang-toggle").addEventListener("click", () => {
-    currentLang = currentLang === "en" ? "es" : "en";
-    const btn = document.getElementById("lang-toggle");
-    btn.textContent = currentLang === "en" ? "ES" : "EN";
-    document.documentElement.lang = currentLang;
-
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-     const key = el.dataset.i18n;
-     if (currentLang === "es" && translations.es[key]) {
-      el.innerHTML = translations.es[key];
-     } else if (savedEN[key]) {
-      el.innerHTML = savedEN[key];
-     }
-    });
-   });
-
-   // Scroll: parallax rings + nav scrolled state
-   const nav = document.querySelector("nav");
-   window.addEventListener(
-    "scroll",
-    () => {
-     const scrollY = window.scrollY;
-     document.querySelectorAll(".hero-ring").forEach((ring, i) => {
-      ring.style.transform = `translate(-50%, calc(-50% + ${scrollY * (0.05 + i * 0.03)}px))`;
-     });
-     nav.classList.toggle("scrolled", scrollY > 60);
-    },
-    { passive: true },
-   );
-
-   // Scroll reveal
-   const revealObserver = new IntersectionObserver(
-    (entries) => {
-     entries.forEach((e) => {
-      if (e.isIntersecting) {
-       const delay = parseInt(e.target.dataset.delay) || 0;
-       setTimeout(() => e.target.classList.add("visible"), delay);
-       revealObserver.unobserve(e.target);
-      }
-     });
-    },
-    { threshold: 0.1 },
-   );
-   document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-
-   // Active nav link on scroll
-   const sectionIds = ["hero", "about", "gallery", "tattoo", "location", "booking"];
-   const navAnchors = document.querySelectorAll('nav ul a[href^="#"]');
-   const sectionEls = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
-   const sectionObserver = new IntersectionObserver(
-    (entries) => {
-     entries.forEach((e) => {
-      if (e.isIntersecting) {
-       navAnchors.forEach((a) => {
-        a.classList.toggle("nav-active", a.getAttribute("href") === "#" + e.target.id);
-       });
-      }
-     });
-    },
-    { rootMargin: "-40% 0px -55% 0px" },
-   );
-   sectionEls.forEach((el) => sectionObserver.observe(el));
-
-   // Hamburger menu
-   const hamburger = document.getElementById("nav-hamburger");
-   const navUl = document.querySelector("nav ul");
-   hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
-    navUl.classList.toggle("open");
-   });
-   navUl.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-     hamburger.classList.remove("open");
-     navUl.classList.remove("open");
-    });
-   });
-  </script>
+  <script src="ink.js"></script>
  </body>
 </html>
