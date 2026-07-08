@@ -66,6 +66,7 @@ const translations = {
   "nav-location": "Ubicación",
   "nav-book": "Reservar",
   "nav-follow": "Sígueme en:",
+  "nav-lang-label": "Selector de idioma:",
   "hero-eyebrow": "Tatuador y creador visual",
   "hero-sub": "Tinta, fotografía y arte visual hecho a mano — con un profundo respeto por el cuerpo humano como lienzo vivo.",
   "hero-cta-book": "Reservar una sesión",
@@ -164,20 +165,63 @@ document.querySelectorAll("[data-i18n]").forEach((el) => {
  savedEN[el.dataset.i18n] = el.innerHTML;
 });
 
-document.getElementById("lang-toggle").addEventListener("click", () => {
- currentLang = currentLang === "en" ? "es" : "en";
- const btn = document.getElementById("lang-toggle");
- btn.textContent = currentLang === "en" ? "ES" : "EN";
- document.documentElement.lang = currentLang;
+const langSelect = document.querySelector(".lang-select");
+const langToggle = document.getElementById("lang-toggle");
+const langCurrent = langToggle.querySelector(".lang-current");
+const langMenu = document.getElementById("lang-menu");
+const langOptions = langMenu.querySelectorAll("li[data-lang]");
+
+function setLanguage(lang) {
+ currentLang = lang;
+ document.documentElement.lang = lang;
+ langCurrent.textContent = lang.toUpperCase();
+ langToggle.setAttribute("aria-label", "Translate — " + lang.toUpperCase());
+ langOptions.forEach((opt) => {
+  opt.setAttribute("aria-selected", opt.dataset.lang === lang ? "true" : "false");
+ });
 
  document.querySelectorAll("[data-i18n]").forEach((el) => {
   const key = el.dataset.i18n;
-  if (currentLang === "es" && translations.es[key]) {
+  if (lang === "es" && translations.es[key]) {
    el.innerHTML = translations.es[key];
   } else if (savedEN[key]) {
    el.innerHTML = savedEN[key];
   }
  });
+}
+
+function closeLangMenu() {
+ if (langMenu.contains(document.activeElement)) langToggle.focus();
+ langSelect.classList.remove("open");
+ langToggle.setAttribute("aria-expanded", "false");
+}
+
+langToggle.addEventListener("click", (e) => {
+ e.stopPropagation();
+ const isOpen = langSelect.classList.toggle("open");
+ langToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+langOptions.forEach((opt) => {
+ opt.addEventListener("click", () => {
+  setLanguage(opt.dataset.lang);
+  closeLangMenu();
+ });
+ opt.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+   e.preventDefault();
+   setLanguage(opt.dataset.lang);
+   closeLangMenu();
+  }
+ });
+});
+
+document.addEventListener("click", (e) => {
+ if (!langSelect.contains(e.target)) closeLangMenu();
+});
+
+document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape") closeLangMenu();
 });
 
 // Scroll + mouse: parallax rings/glow + nav scrolled state

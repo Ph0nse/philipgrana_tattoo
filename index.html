@@ -67,7 +67,7 @@
     <li><a href="#location" data-i18n="nav-location">Location</a></li>
     <li><a href="#booking" data-i18n="nav-book">Book</a></li>
     <li style="margin-left: 24px; padding-left: 24px; border-left: 1px solid rgba(200,169,126,0.25); display: flex; align-items: center; gap: 10px;">
-     <span data-i18n="nav-follow" style="font-family:'Courier New',monospace; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--paper); opacity:0.7;">Follow me on:</span>
+     <span data-i18n="nav-follow" class="nav-label">Follow me on:</span>
      <a href="https://www.instagram.com/philipgrana_tattoo/" target="_blank" aria-label="Instagram" style="display:flex; align-items:center;">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -75,7 +75,33 @@
        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
       </svg>
      </a>
-     <button id="lang-toggle" class="lang-toggle">ES</button>
+     <div class="lang-select-group">
+      <span data-i18n="nav-lang-label" class="nav-label">Language Selector:</span>
+      <div class="lang-select">
+       <button
+        id="lang-toggle"
+        class="lang-toggle"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+        aria-controls="lang-menu"
+        aria-label="Translate — EN"
+        title="Translate"
+       >
+        <svg class="lang-globe" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+         <circle cx="12" cy="12" r="9" />
+         <path d="M3 12h18M12 3c2.8 2.6 4.2 5.7 4.2 9s-1.4 6.4-4.2 9c-2.8-2.6-4.2-5.7-4.2-9s1.4-6.4 4.2-9Z" />
+        </svg>
+        <span class="lang-current">EN</span>
+        <svg class="lang-caret" width="9" height="9" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+         <path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+       </button>
+       <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Select language">
+        <li role="option" data-lang="en" aria-selected="true" tabindex="0">English</li>
+        <li role="option" data-lang="es" aria-selected="false" tabindex="0">Español</li>
+       </ul>
+      </div>
+     </div>
     </li>
    </ul>
    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
