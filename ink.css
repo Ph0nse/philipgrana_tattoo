@@ -12,7 +12,8 @@
  --gold: #c8a97e;
  --card: #1a1a1a;
  --copper: #6b4f3a;
- --muted: #888070;
+ --muted: #a89f8c;
+ --body-text: #cdc6b3;
  --gap: clamp(48px, 8vw, 96px);
 }
 
@@ -53,6 +54,7 @@ nav {
  color: var(--gold);
  text-decoration: none;
  text-transform: uppercase;
+ overflow-wrap: anywhere;
 }
 
 nav ul {
@@ -68,7 +70,7 @@ nav ul a {
  text-transform: uppercase;
  color: var(--paper);
  text-decoration: none;
- opacity: 0.7;
+ opacity: 0.82;
  transition:
   opacity 0.2s,
   color 0.2s;
@@ -194,10 +196,12 @@ nav ul a:hover {
 
 .hero-sub {
  margin-top: 28px;
- font-size: 1rem;
- font-weight: 300;
- color: var(--muted);
- letter-spacing: 0.06em;
+ font-family: "Cormorant Garamond", serif;
+ font-size: 1.15rem;
+ font-weight: 500;
+ color: var(--body-text);
+ letter-spacing: 0.02em;
+ line-height: 1.7;
  max-width: 420px;
  position: relative;
  z-index: 1;
@@ -281,15 +285,19 @@ section {
  font-family: "Cinzel", serif;
  font-size: clamp(1.8rem, 4vw, 3rem);
  font-weight: 600;
- line-height: 1.15;
+ line-height: 1.25;
+ letter-spacing: 0.01em;
  color: var(--paper);
  margin-bottom: 28px;
 }
 
 .section-body {
- font-size: 1rem;
+ font-family: "Cormorant Garamond", serif;
+ font-size: 1.15rem;
+ font-weight: 500;
  line-height: 1.85;
- color: rgba(240, 234, 214, 0.72);
+ letter-spacing: 0.02em;
+ color: var(--body-text);
  max-width: 660px;
 }
 
@@ -597,9 +605,11 @@ section {
 }
 
 .tattoo-desc {
- font-size: 0.85rem;
- color: var(--muted);
- line-height: 1.7;
+ font-size: 0.95rem;
+ font-weight: 500;
+ color: var(--body-text);
+ letter-spacing: 0.01em;
+ line-height: 1.75;
 }
 
 /* ── LOCATION ── */
@@ -674,9 +684,10 @@ section {
 }
 
 .info-value {
- font-size: 1rem;
+ font-size: 1.05rem;
  color: var(--paper);
- font-weight: 300;
+ font-weight: 500;
+ letter-spacing: 0.01em;
 }
 
 /* ── BOOKING ── */
@@ -920,6 +931,14 @@ nav ul a.nav-active {
  #hero {
   padding-bottom: 14vh;
  }
+ .nav-logo {
+  font-size: clamp(0.65rem, 3.5vw, 0.95rem);
+  letter-spacing: 0.1em;
+ }
+ .hero-title {
+  font-size: clamp(2.3rem, 12vw, 3.6rem);
+  overflow-wrap: anywhere;
+ }
  .hero-ring:nth-child(1) {
   width: 220px;
   height: 220px;
@@ -944,9 +963,18 @@ nav ul a.nav-active {
   text-align: center;
  }
  .gallery-grid {
-  grid-template-columns: 1fr;
+  gap: 2px;
  }
- .gallery-item {
-  aspect-ratio: 4/3 !important;
+}
+
+/* Short/landscape phones: don't force a full 100vh hero */
+@media (max-height: 500px) and (orientation: landscape) {
+ #hero {
+  min-height: auto;
+  padding-top: 100px;
+  padding-bottom: 6vh;
+ }
+ .hero-ring {
+  display: none;
  }
 }
