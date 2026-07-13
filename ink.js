@@ -224,7 +224,9 @@ function setLanguage(lang) {
  langCurrent.textContent = lang.toUpperCase();
  langToggle.setAttribute("aria-label", "Translate — " + lang.toUpperCase());
  langOptions.forEach((opt) => {
-  opt.setAttribute("aria-selected", opt.dataset.lang === lang ? "true" : "false");
+  const selected = opt.dataset.lang === lang;
+  opt.setAttribute("aria-selected", selected ? "true" : "false");
+  opt.classList.toggle("is-selected", selected);
  });
 
  document.querySelectorAll("[data-i18n]").forEach((el) => {

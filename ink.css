@@ -101,11 +101,11 @@ nav ul a:hover {
  display: flex;
  align-items: center;
  gap: 10px;
+ margin-left: 20px;
 }
 
 .lang-select {
  position: relative;
- margin-left: 6px;
 }
 
 .lang-toggle {
@@ -138,6 +138,7 @@ nav ul a:hover {
 }
 
 .lang-menu {
+ display: block;
  position: absolute;
  top: calc(100% + 8px);
  right: 0;
@@ -149,6 +150,7 @@ nav ul a:hover {
  border: 1px solid rgba(200, 169, 126, 0.25);
  opacity: 0;
  visibility: hidden;
+ pointer-events: none;
  transform: translateY(-6px);
  transition:
   opacity 0.2s,
@@ -160,6 +162,7 @@ nav ul a:hover {
 .lang-select.open .lang-menu {
  opacity: 1;
  visibility: visible;
+ pointer-events: auto;
  transform: translateY(0);
 }
 
@@ -170,23 +173,25 @@ nav ul a:hover {
  text-transform: uppercase;
  color: var(--paper);
  opacity: 0.75;
+ line-height: 1;
  padding: 8px 12px;
+ margin: 0;
+ border-left: 2px solid transparent;
  cursor: pointer;
- transition:
-  background 0.15s,
-  color 0.15s,
-  opacity 0.15s;
+ transition: background 0.15s;
 }
 
 .lang-menu li:hover,
 .lang-menu li:focus-visible {
  background: rgba(200, 169, 126, 0.1);
  color: var(--gold);
+ border-left-color: var(--gold);
  opacity: 1;
 }
 
-.lang-menu li[aria-selected="true"] {
+.lang-menu li.is-selected {
  color: var(--gold);
+ border-left-color: var(--gold);
  opacity: 1;
 }
 
